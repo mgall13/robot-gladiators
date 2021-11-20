@@ -1,3 +1,12 @@
+/* GAME FUNCTION */
+
+// function to generate a random numeric value
+var randomNumber = function(min, max) {
+    var value = Math.floor(Math.random() * (max - min + 1) + min);
+  
+    return value;
+};
+
 // fight function (now with parameter for enemy's name)
 var fight = function(enemy) {
   while (playerInfo.health > 0 && enemy.health > 0) {
@@ -72,7 +81,7 @@ var startGame = function() {
       window.alert('Welcome to Robot Gladiators! Round ' + (i + 1));
 
       // pick new enemy to fight based on the index of the enemy.names array
-      var pickedEnemyObj = enemyInfo.length
+      var pickedEnemyObj = enemyInfo[i];
 
       // reset enemy.health before starting new fight
       pickedEnemyObj.health = randomNumber(40, 60);
@@ -153,12 +162,6 @@ var shop = function() {
       shop();
       break;
   }
-  // function to generate a random numeric value
-  var randomNumber = function() {
-    var value = Math.floor(Math.random() * (21)) + 40;
-  
-    return value;
-  }
 };
 
 var playerInfo = {
@@ -207,6 +210,11 @@ var enemyInfo = [
         attack: randomNumber(10, 14)
     }
 ];
+
+console.log(enemyInfo);
+console.log(enemyInfo[0]);
+console.log(enemyInfo[0].name);
+console.log(enemyInfo[0]['attack']);
 
 // start first game when page loads
 startGame();
