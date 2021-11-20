@@ -1,3 +1,12 @@
+/* GAME FUNCTION */
+
+// function to generate a random numeric value
+var randomNumber = function(min, max) {
+    var value = Math.floor(Math.random() * (max - min + 1) + min);
+  
+    return value;
+};
+
 // fight function (now with parameter for enemy's name)
 var fight = function(enemy) {
     while (playerInfo.health > 0 && enemy.health > 0) {
